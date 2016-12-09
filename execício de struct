@@ -4,7 +4,7 @@
 struct pessoa 
 {
 	char nome[30];
-	int idade[100];
+	int idade;
 }dados[3];
 
 int main()
@@ -13,9 +13,12 @@ int main()
 	printf("digite os dados de oitenta pessoas \n");
 	for(x=0;x<3;x++)
 	{
-		printf("Digite o nome da pessoa \n");
+		printf("Digite o nome da pessoa %d\n",x+1);
 		gets(dados[x].nome);
-		printf("\n Digite a idade dessa pessoa(de zero a cem) \n");
+	}
+		for(x=0;x<3;x++)
+	{
+	printf("\n Digite a idade dessa pessoa %d(de zero a cem) \n",x+1);
 		scanf("%d",&dados[x].idade);
 	}
 	parametro=0;
@@ -24,7 +27,7 @@ int main()
 	printf("Conjunto das pessoas com essa idade ") ;
 	for(x=0;x<3;x++)
 	{
-		if(idade==dados[x].idade[100])
+		if(idade==dados[x].idade)
 		{
 		puts(dados[x].nome);
 		parametro=parametro+1;
