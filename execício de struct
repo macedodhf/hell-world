@@ -1,0 +1,38 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+struct pessoa 
+{
+	char nome[30];
+	int idade[100];
+}dados[3];
+
+int main()
+{
+	int x,idade,parametro;
+	printf("digite os dados de oitenta pessoas \n");
+	for(x=0;x<3;x++)
+	{
+		printf("Digite o nome da pessoa \n");
+		gets(dados[x].nome);
+		printf("\n Digite a idade dessa pessoa(de zero a cem) \n");
+		scanf("%d",&dados[x].idade);
+	}
+	parametro=0;
+	printf("Digite uma idade de zero a cem \n");
+	scanf("%d",&idade);
+	printf("Conjunto das pessoas com essa idade ") ;
+	for(x=0;x<3;x++)
+	{
+		if(idade==dados[x].idade[100])
+		{
+		puts(dados[x].nome);
+		parametro=parametro+1;
+		}
+	}
+	if(parametro==0)
+	printf("Não existem pessoas catálogadas com essa idade \n");
+	printf("digite qualquer tecla para acabar \n");
+	scanf("%d",&x);
+	return(0);
+}
